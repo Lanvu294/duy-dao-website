@@ -731,3 +731,13 @@ body.home .heroline.line2       { animation-delay: 1.04s; }
 
 body.about .about-photo { opacity: 0; animation: fadeSlideUp 0.8s ease forwards; animation-delay: 0.2s; }
 body.about .about-info  { opacity: 0; animation: fadeSlideUp 0.9s ease forwards; animation-delay: 0.45s; }
+
+body.about .about-info h1 {
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.about .about-info h1:hover {
+  color: red;
+  transform: rotate(-4deg);
+}
