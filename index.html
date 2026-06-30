@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Basic HTML structure supported with CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="text/javascript" src="jquery-4.0.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".hamburgermenu").click(function () {
+          $("nav > ul").toggleClass("show");
+        });
+      });
+    </script>
+  </head>
+  <body class="home">
+    <header>
+      <nav>
+        <a href="#" class="hamburgermenu"> ☰ </a>
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="html/about.html">ABOUT</a></li>
+          <li>
+            <a href="html/gallery.html">GALLERY</a>
+            <ul>
+              <li><a href="html/gallery/vinamilk.html">VINAMILK</a></li>
+              <li><a href="html/gallery/gieo-ngot.html">GIEO - NGOT</a></li>
+              <li><a href="html/gallery/trantien.html">TRAN TIEN</a></li>
+            </ul>
+          </li>
+          <li><a href="html/timeline.html">TIMELINE</a></li>
+          <li><a href="html/video.html">VIDEO</a></li>
+          <li><a href="html/credits.html">CREDITS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <main>
+        <div class="homehero">
+          <div class="heroline anim-left">
+            <h1>CROSSING</h1>
+          </div>
+
+          <div class="heroline line1 anim-right">
+            <h1>THE</h1>
+            <h1>STREETS IN</h1>
+          </div>
+
+          <div class="heroline vietnam anim-up">
+            <h1>VIETNAM</h1>
+          </div>
+
+          <div class="bigmiddle anim-fade">
+            <h1 class="equals">=</h1>
+              <p class="maindes">
+                DUY DAO IS A VIETNAMESE CREATIVE DIRECTOR, BRAND, EDITORIAL &
+                TYPE DESIGNER WITH A PROLIFIC CAREER SPANNING CALIFORNIA [US] AND HANOI
+                [VN] OVER 10 YEARS.
+              </p>
+
+            <img src="images/chararun.svg" alt="characters" class="running1" />
+          </div>
+
+          <div class="heroline myline anim-left">
+            <h1>MY</h1>
+          </div>
+          <div class="heroline line2 anim-right">
+            <h1>DESIGN</h1>
+            <h1 class="thin-text">THIN</h1>
+            <h1 class="king-text">KING</h1>
+          </div>
+
+          <img src="images/sidewalk.svg" alt="sidewalk" class="sidewalk-home" />
+          <img src="images/homepagedecor/shoee.svg" alt="" class="deco-shoe" />
+          <img src="images/homepagedecor/treee.svg" alt="" class="deco-tree" />
+          <img src="images/homepagedecor/bottle.svg" alt="" class="deco-bottle" />
+          <img src="images/homepagedecor/running.svg" alt="" class="deco-running" />
+          <img src="images/homepagedecor/cow.svg" alt="" class="deco-cow" />
+        </div>
+      </main>
+    </section>
+    <script src="cursor-trail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Gallery Page</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="text/javascript" src="../jquery-4.0.0.min.js"></script>
+
+    <script>
+      // ── Layout data ─────────────────────────────────────────────────────────
+      // Nudge individual pieces here. Stage is 1920×1080 px.
+      // { id, top, left, width, rotation }
+      const GALLERY_ITEMS = [
+        // 5 main projects — unchanged
+        { id: 'adidas',      top:  20, left:  63, width: 420, rotation: -1.5 },
+        { id: 'ngotgieo',    top:  40, left: 548, width: 400, rotation:  1.0 },
+        { id: 'vinamilk',    top: 280, left: 556, width: 230, rotation: -1.0 },
+        { id: 'trantien',    top: 260, left: 790, width: 578, rotation:  1.5 },
+        { id: 'xanh-mono',   top:  95, left:1410, width: 480, rotation: -1.2 },
+        // accent objects — filling empty space around the 5 main items
+        // narrow gap between adidas (right=483) and ngotgieo (left=548)
+        { id: 'pen',         top:  42, left: 487, width:  56, rotation: -2.0 },
+        // upper-right zone: above trantien (top=260), right of ngotgieo (right=948)
+        { id: 'paperclip',   top:  60, left: 962, width:  25, rotation: -2.5 },
+        { id: 'stay-berlin', top:  90, left: 998, width: 112, rotation:  1.8 },
+        { id: 'beanie',      top: -15, left:1120, width: 220, rotation:  2.0 },
+        // lower zone: below trantien (bottom≈840), between adidas right and xanh-mono left
+        { id: 'ticket',      top: 700, left: 468, width: 292, rotation:  1.0 },
+        { id: 'book',        top: 580, left:1380, width: 660, rotation: -1.5 },
+      ];
+      // ────────────────────────────────────────────────────────────────────────
+
+      $(document).ready(function () {
+        $(".hamburgermenu").click(function () {
+          $("nav > ul").toggleClass("show");
+        });
+
+        // Apply absolute positions from data array
+        GALLERY_ITEMS.forEach(function (item) {
+          $(".galleryitem[data-id='" + item.id + "']").css({
+            top:       item.top  + "px",
+            left:      item.left + "px",
+            width:     item.width + "px",
+            transform: "rotate(" + item.rotation + "deg)",
+          });
+        });
+
+        // Scale the stage so it always fits browser width exactly
+        function scaleStage() {
+          var scale = $(window).width() / 1920;
+          $(".gallery-stage").css("transform", "scale(" + scale + ")");
+        }
+
+        $(window).on("resize", scaleStage);
+        scaleStage();
+      });
+    </script>
+  </head>
+  <body class="gallery">
+    <header>
+      <nav>
+        <a href="#" class="hamburgermenu"> ☰ </a>
+        <ul>
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li>
+            <a href="#">GALLERY</a>
+            <ul>
+              <li><a href="gallery/vinamilk.html">VINAMILK</a></li>
+              <li><a href="gallery/gieo-ngot.html">GIEO - NGOT</a></li>
+              <li><a href="gallery/trantien.html">TRAN TIEN</a></li>
+            </ul>
+          </li>
+          <li><a href="timeline.html">TIMELINE</a></li>
+          <li><a href="video.html">VIDEO</a></li>
+          <li><a href="credits.html">CREDITS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <main>
+        <div class="gallery-stage">
+
+          <figure class="galleryitem" data-id="adidas">
+            <img src="../images/sil_adidas.svg" alt="adidas" class="silhouette" />
+            <img src="../images/rev_adidas.svg" alt="adidas" class="reveal" />
+            <figcaption>adidas superstar 50th anniversary</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="ngotgieo">
+            <img src="../images/sil_ngot_gieo.svg" alt="ngotgieo" class="silhouette" />
+            <img src="../images/rev_ngot_gieo.svg" alt="ngotgieo" class="reveal" />
+            <figcaption>gieo album - ngot</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="vinamilk">
+            <img src="../images/sil_vinamilkk.svg" alt="vinamilk" class="silhouette" />
+            <img src="../images/rev_vinamilkk.svg" alt="vinamilk" class="reveal" />
+            <figcaption>vinamilk rebranding</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="trantien">
+            <img src="../images/sil_tran_tien.svg" alt="tran tien" class="silhouette" />
+            <img src="../images/rev_tran_tien.svg" alt="tran tien" class="reveal" />
+            <figcaption>tran tien</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="xanh-mono">
+            <img src="../images/sil_xanh_mono.svg" alt="xanh mono" class="silhouette" />
+            <img src="../images/rev_xanh_mono.svg" alt="xanh mono" class="reveal" />
+            <figcaption>xanh mono</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="stay-berlin">
+            <img src="../images/staywhatberlintag.svg" alt="stay what berlin tag" class="silhouette" />
+            <figcaption>say what berlin</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="pen">
+            <img src="../images/pen.svg" alt="pen" class="silhouette" />
+          </figure>
+
+          <figure class="galleryitem" data-id="paperclip">
+            <img src="../images/paperclip.svg" alt="paperclip" class="silhouette" />
+          </figure>
+
+          <figure class="galleryitem" data-id="ticket">
+            <img src="../images/tickett.svg" alt="ticket" class="silhouette" />
+            <figcaption>nhung dua tre - con duong</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="beanie">
+            <img src="../images/beanie.svg" alt="beanie" class="silhouette" />
+            <figcaption>impira brand identity</figcaption>
+          </figure>
+
+          <figure class="galleryitem" data-id="book">
+            <img src="../images/boook.svg" alt="book" class="silhouette" />
+            <figcaption>book</figcaption>
+          </figure>
+
+        </div>
+      </main>
+    </section>
+
+    <script src="../cursor-trail.js"></script>
+  </body>
+</html>

@@ -1,0 +1,731 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* CUSTOM CSS HERE */
+
+html * {
+  box-sizing: border-box;
+  /* border: 1px solid red;
+  background: rgba(255, 0, 0, 0.2); */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Helvetica", Verdana, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  line-height: 1.4;
+  background-color: #f8f8f7;
+}
+
+a {
+  color: red;
+  font-weight: 732;
+}
+
+a:hover {
+  color: rgb(0, 0, 0);
+}
+
+header,
+footer {
+  padding: 1rem;
+}
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height:60%;
+  background-color: #f8f8f7;
+  position: relative;
+  z-index: 100;
+}
+
+header nav {
+  padding-bottom: 1.1rem;
+}
+
+header nav a.hamburgermenu {
+  display: none;
+  font-size: 2rem;
+}
+
+header nav ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+header nav ul li a {
+  background-color: #f8f8f7;
+  color: rgb(0, 0, 0);
+  padding: 1em;
+  border-radius: 0.5em;
+  display: block;
+  text-decoration: none;
+  font-family: "IBM Plex Mono";
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+header nav ul li ul {
+  flex-direction: column;
+  display: none;
+}
+
+header nav ul li:hover ul {
+  display: flex;
+  position: absolute;
+  background-color: #f8f8f7;
+  z-index: 9999;
+}
+
+section {
+  display: flex;
+  /* background: #8f7; */
+  flex-wrap: nowrap;
+  padding: 1rem;
+}
+
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-family: "IBM Plex Mono";
+  font-size: 1.26rem;
+  font-weight: 700;
+  line-height: 0.9;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 2rem; /*caption*/
+}
+
+h4 {
+  font-family: "IBM Plex Mono";
+  font-weight: 200;
+  font-size: 0.65rem;
+  margin-bottom: 0.8rem;
+}
+
+
+p {
+  font-size: 0.8rem;
+  font-family: "Helvetica";
+  line-height: 1.2;
+  padding-left: 1.4 rem;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  header nav {
+    padding-bottom: 0;
+    width: 100%;
+  }
+
+  header nav a.hamburgermenu {
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+
+  header nav > ul {
+    /* display: flex; */
+    flex-direction: column;
+    display: none;
+  }
+
+  header nav > ul.show {
+    display: flex;
+  }
+
+  header nav ul li:hover ul {
+    display: flex;
+    position: relative;
+  }
+
+  header nav ul li ul li a {
+    margin-left: 1em;
+    /* padding-left: 2em; */
+  }
+
+  section {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  aside {
+    width: 100%;
+  }
+}
+
+/* ABOUT PAGE STYLING */
+
+.about-hero {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 80vh;
+  padding: 0;
+}
+
+.about-photo {
+  width: 100%;
+  border-radius: 0;
+  padding: 0;
+}
+
+.about-photo img {
+  width: 98.6%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-info {
+  width: 30%;
+  height: 100%
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.about-info h1 {
+  font-size: 3.7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* VIDEO PAGE STYLING */
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-bottom: 4rem; 
+}
+
+/* CREDITS PAGE STYLING */
+
+.credits {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+  align-items: flex-start;
+  margin-top: 58vh;
+}
+
+.credits aside {
+  flex: 1;
+  border: 1px solid #333;
+  padding: 1rem;
+}
+
+.credits ul li {
+  font-size: 0.75rem;
+  font-family: "Helvetica;
+  margin-bottom: 0.25rem;
+}
+
+/*HOME STYLING */
+body.home section {
+  padding: 0;
+}
+
+body.home main {
+  position: relative;
+}
+
+.maindes { 
+  max-width: 240px; 
+}
+
+.homehero {
+  overflow: hidden;
+  padding: 0 1rem;
+  position: relative;
+}
+ 
+/*Split words up big text???*/
+.heroline {
+  display: flex;
+  justify-content: flex-start;
+  line-height: 0.86;
+}
+
+.heroline h1 {
+  font-weight: 900;
+  font-size: 6rem;
+}
+
+.equals {
+  font-weight: 900;
+  font-size: 6rem;
+  line-height: 0.86;
+}
+
+.bigmiddle {
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.line1 { gap: 20rem; }
+.line2 { justify-content: flex-start; gap: 0; }
+.line2 .thin-text { margin-left: calc(10rem - 60px); }
+.line2 .king-text { margin-left: auto; }
+.vietnam { padding-left: 16rem; }
+.myline { padding-left: 21.8rem; }
+
+.smallinfo {
+  max-width: 230px;
+  font-size: 0.75rem;
+  font-family: "Helvetica";
+  line-height: 1.4;
+  padding-left: 1.4 rem;
+}
+
+.running1 {
+  max-width: 400px;
+  position: relative;
+  top: -12rem;
+  left: -8rem;
+  margin-bottom:-20rem;
+}
+
+.sidewalk-home {
+  position: absolute;
+  right: 21%;
+  top: 33%;
+  width: 16%;
+  z-index: -1;
+}
+
+/* shoe — right of CROSSING G, riding the cap height */
+.deco-shoe {
+  position: absolute;
+  top: calc(1rem + 20px);
+  left: calc(47% + 20px);
+  width: 115px;
+  pointer-events: none;
+}
+
+/* tree — right next to the V in VIETNAM */
+.deco-tree {
+  position: absolute;
+  top: calc(9.5rem + 20px);
+  left: 11rem;
+  width: 55px;
+  pointer-events: none;
+}
+
+/* bottle — horizontal, left of MY */
+.deco-bottle {
+  position: absolute;
+  top: calc(20rem + 10px);
+  left: calc(12rem + 60px);
+  width: 60px;
+  transform: rotate(90deg);
+  pointer-events: none;
+}
+
+/* running — right next to Y in MY, larger */
+.deco-running {
+  position: absolute;
+  top: 22.5rem;
+  left: calc(30% + 140px);
+  width: 160px;
+  pointer-events: none;
+}
+
+/* cow — smaller, between THIN and KING, sitting on baseline */
+.deco-cow {
+  position: absolute;
+  top: calc(27.5rem + 10px);
+  left: calc(60% + 30px);
+  width: 110px;
+  pointer-events: none;
+}
+
+
+/* GALLERY STYLING */
+
+body.gallery section {
+  padding: 0;
+  height: calc(100vh - 65px);
+  overflow: hidden;
+  align-items: flex-start;
+}
+
+body.gallery main {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-stage {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  transform-origin: top left;
+  background-image: url('images/backgroundgrid.jpg');
+  background-size: 100% 100%;
+}
+
+.galleryitem {
+  position: absolute;
+}
+
+.galleryitem .silhouette {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.galleryitem .reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.galleryitem figcaption {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  opacity: 0;
+  color: black;
+  font-size: 14px;
+  font-family: "IBM Plex Mono";
+  transition: opacity 0.5s ease;
+  white-space: nowrap;
+}
+
+.galleryitem:hover .reveal,
+.galleryitem:hover figcaption {
+  opacity: 1;
+}
+
+
+/*TIMELINE*/
+
+body.timeline {
+  background-image: url('../images/timelinebg.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+body.timeline section { 
+  flex: 1; padding: 0; 
+}
+body.timeline main { 
+  position: relative; min-height: 80vh; 
+}
+
+.timeline-cluster { 
+  display: flex; 
+  flex-wrap: wrap; 
+  width: 440px; 
+  gap: 0.5rem; 
+  position: absolute; 
+}
+.cluster-a { 
+  top: 20vh; 
+  left: 63.2vh; 
+}
+
+.timeline-item { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  cursor: crosshair; 
+}
+.timeline-item img { 
+  width: 100px; 
+  height: 100px; 
+}
+
+.timeline-item figcaption { 
+  font-family: "IBM Plex Mono"; 
+  font-size: 0.7rem; 
+  text-align: center; 
+  padding-top: 0.4rem; 
+}
+
+.timeline-item .desc {
+  font-size: 0.65rem;
+  max-width: 100px;
+  line-height: 1.3;
+  opacity: 0;
+  height: 14px;
+  transition: opacity 0.45s ease;
+}
+.timeline-item:hover .desc {
+  opacity: 1;
+}
+
+.timeline-item:nth-child(3) figcaption,
+.timeline-item:nth-child(4) figcaption,
+.timeline-item:nth-child(7) figcaption,
+.timeline-item:nth-child(8) figcaption {
+  color: #f8f8f7;
+}
+
+/* SUBGALLERIES */
+
+body.subgallery section {
+  padding: 0;
+  margin-top: -40px;
+}
+
+.project-title {
+  font-family: "IBM Plex Mono";
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: lowercase;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+}
+
+.project-hero {
+  overflow: hidden;
+}
+
+.project-hero img {
+  width: 100%;
+  height: 68vh;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  filter: grayscale(1) contrast(1.08) brightness(0.85);
+  transform: scale(1);
+  transform-origin: center center;
+  /* slow fade back to B&W on mouse leave */
+  transition: filter 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-hero:hover img {
+  filter: grayscale(0) contrast(1) brightness(1) saturate(1.12);
+  transform: scale(1.03);
+  /* fast reveal of colour on mouse enter */
+  transition: filter 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.subgallery main p {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid black;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  font-family: "IBM Plex Mono";
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* ── ENTRY ANIMATIONS ───────────────────────────────────────────────────── */
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-90px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(90px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(55px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* springy easing for big display text, smooth for everything else */
+.anim-left  { opacity: 0; animation: slideInLeft  0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.anim-right { opacity: 0; animation: slideInRight 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.anim-up    { opacity: 0; animation: slideInUp    0.85s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+.anim-fade  { opacity: 0; animation: fadeSlideUp  0.9s  ease forwards; }
+
+/* ── NAV — all pages ────────────────────────────────────────────────────── */
+
+header { opacity: 0; animation: fadeSlideUp 0.6s ease forwards; animation-delay: 0.05s; }
+
+/* ── HOMEPAGE ────────────────────────────────────────────────────────────── */
+
+body.home .heroline:first-child { animation-delay: 0.15s; }
+body.home .heroline.line1       { animation-delay: 0.32s; }
+body.home .heroline.vietnam     { animation-delay: 0.50s; }
+body.home .bigmiddle            { animation-delay: 0.68s; }
+body.home .heroline.myline      { animation-delay: 0.86s; }
+body.home .heroline.line2       { animation-delay: 1.04s; }
+
+/* ── ABOUT PAGE ─────────────────────────────────────────────────────────── */
+
+body.about .about-photo { opacity: 0; animation: fadeSlideUp 0.8s ease forwards; animation-delay: 0.2s; }
+body.about .about-info  { opacity: 0; animation: fadeSlideUp 0.9s ease forwards; animation-delay: 0.45s; }

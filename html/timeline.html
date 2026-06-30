@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Timeline Page</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="text/javascript" src="../jquery-4.0.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".hamburgermenu").click(function () {
+          $("nav > ul").toggleClass("show");
+        });
+      });
+    </script>
+  </head>
+  <body class="timeline">
+    <header>
+
+
+      <nav>
+        <a href="#" class="hamburgermenu"> ☰ </a>
+        <ul>
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li>
+            <a href="gallery.html">GALLERY</a>
+            <ul>
+              <li><a href="gallery/vinamilk.html">VINAMILK</a></li>
+              <li><a href="gallery/gieo-ngot.html">GIEO - NGOT</a></li>
+              <li><a href="gallery/trantien.html">TRAN TIEN</a></li>
+            </ul>
+          </li>
+          <li><a href="#">TIMELINE</a></li>
+          <li><a href="video.html">VIDEO</a></li>
+          <li><a href="credits.html">CREDITS</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+      <main>
+        <div class="timeline-cluster cluster-a">
+          <figure class="timeline-item">
+            <img src="../images/1995por.svg" alt="Portrait 1995">
+            <figcaption><p>1995</p><p class="desc">born in hanoi</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2013.jpg" alt="Building 2013">
+            <figcaption><p>2013</p><p class="desc">graduated highschool</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2014.jpg" alt="2014">
+            <figcaption><p>2014</p><p class="desc">artcenter:pop</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2015.jpg" alt="2015">
+            <figcaption><p>2015</p><p class="desc">shiffman&kohnke</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2023.jpg" alt="2023">
+            <figcaption><p>2023</p><p class="desc">gieo-ngot</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/20120.jpg" alt="2020">
+            <figcaption><p>2020</p><p class="desc">studio duy</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2019b.jpg" alt="2019">
+            <figcaption><p>2019</p><p class="desc">agency work</p></figcaption>
+          </figure>
+          <figure class="timeline-item">
+            <img src="../images/2019.jpg" alt="2019">
+            <figcaption><p>2019</p><p class="desc">adidas</p></figcaption>
+          </figure>
+        </div>
+      </main>
+
+    </section>
+    <script src="../cursor-trail.js"></script>
+  </body>
+</html>
